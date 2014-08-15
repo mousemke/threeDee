@@ -1,0 +1,285 @@
+@import                   url( http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700italic,700,300italic,300|Acme);
+
+@font-face {
+  font-family:                  'ornatique';
+  src:                          url('../fonts/ornatique.ttf') format('truetype');
+  font-weight:                  normal;
+  font-style:                   normal; 
+}
+
+@font-face {
+    font-family:                'comfortaa';
+    src:                        url('../fonts/Comfortaa-Regular.ttf') format('truetype');
+    font-weight:                normal;
+    font-style:                 normal; }
+
+@font-face {
+  font-family:                  'comfortaaBold';
+  src:                          url( '../fonts/Comfortaa-Bold.ttf') format('truetype');
+  font-weight:                  normal;
+  font-style:                   normal; 
+}
+
+@-webkit-keyframes ajax-loader-rotate {
+    0% {
+        -webkit-transform: rotate( 0deg ); 
+    }
+
+  100% {
+    -webkit-transform: rotate( 360deg ); 
+  } 
+}
+
+@-moz-keyframes ajax-loader-rotate {
+  0% {
+    -moz-transform: rotate( 0deg ); 
+  }
+
+  100% {
+    -moz-transform: rotate( 360deg ); 
+  } 
+}
+
+@-o-keyframes ajax-loader-rotate {
+  0% {
+    -o-transform: rotate( 0deg ); 
+  }
+
+  100% {
+    -o-transform: rotate( 360deg ); 
+  } 
+}
+
+@keyframes ajax-loader-rotate {
+  0% {
+    transform: rotate( 0deg ); 
+  }
+
+  100% {
+    transform: rotate( 360deg ); 
+  } 
+}
+
+* 
+{
+  -webkit-box-sizing:         border-box;
+  -moz-box-sizing:            border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+body 
+{
+  background: #000;
+  font-family: "comfortaa";
+  overflow: hidden; 
+}
+
+html 
+{
+    background-image: url( ../img/retina_dust.png ); 
+}
+
+a 
+{
+  color: #fff;
+  text-decoration: none; 
+}
+
+a:hover 
+{
+  text-decoration: underline; 
+}
+
+::selection, ::-moz-selection 
+{
+  color: #fff;
+  background: #8cc; 
+}
+
+.ajax-loader 
+{
+  opacity: 0.8;
+  display: block;
+  border-radius: 50%;
+  width: 0.25em;
+  height: 0.25em;
+  font-size: 29px;
+  box-shadow: 0 -0.4em 0 0 black, -0.28em -0.28em 0 0 rgba(0, 0, 0, 0.75), -0.4em 0 0 0 rgba(0, 0, 0, 0.5), -0.28em 0.28em 0 0 rgba(0, 0, 0, 0.25);
+  -webkit-animation: 0.85s ajax-loader-rotate steps(8) infinite;
+  -moz-animation: 0.85s ajax-loader-rotate steps(8) infinite;
+  animation: 0.85s ajax-loader-rotate steps(8) infinite; 
+}
+
+.centered 
+{
+  text-align: center; 
+}
+
+.wireDiv 
+{
+  background: #fff;
+  border: #fff 1px solid; }
+
+#left 
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    background: #000;
+    display: inline-block; 
+}
+
+#right 
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+    background: #000;
+    display: inline-block; 
+}
+
+#background 
+{
+    display: inline-block; 
+}
+
+#titleFirst 
+{
+    color:                      #f00;
+    z-index:                    9999;
+    position:                   absolute;
+    top:                        0em;
+    right:                      0em; 
+    -webkit-transform: translateZ( 0px );
+}
+
+#loading 
+{
+    color:                      #272722; 
+    background-color:           #fff;
+    width:                      150px;
+    height:                     25px;
+    position:                   absolute;
+    margin:                     20px 0 0 20px;
+    line-height:                25px;
+    text-align:                 center;
+}
+
+#background img 
+{
+    position: absolute;
+    top: 0em;
+    -webkit-transition: opacity 0.75s ease-in 0s;
+    -moz-transition: opacity 0.75s ease-in 0s;
+    transition: opacity 0.75s ease-in 0s; 
+}
+
+#title {
+    display: none; 
+}
+
+#clouds 
+{
+    pointer-events: none; 
+}
+
+.threeDObject 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d; 
+}
+
+#viewport 
+{
+    display: inline-block;
+    -webkit-perspective: 1001;
+    -moz-perspective: 1001;
+    perspective: 1001;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in 0s;
+    -moz-transition: opacity 1s ease-in 0s;
+    transition: opacity 1s ease-in 0s; 
+}
+
+#foreground 
+{
+    z-index: 10;
+    position: absolute;
+    top: 0em;
+    -webkit-transition: opacity 1s ease-in 0s;
+    -moz-transition: opacity 1s ease-in 0s;
+    transition: opacity 1s ease-in 0s;
+    background: #000; 
+}
+
+#world 
+{
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    width: 512px;
+    height: 512px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d; 
+}
+
+#world div 
+{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d; 
+}
+
+.cloudBase 
+{
+    position: absolute;
+    top: 256px;
+    left: 256px;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px; 
+}
+
+.cloudLayer 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 256px;
+    height: 256px;
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out; }
+
+#elementBuilding > img {
+    position: absolute;
+    top: 0em;
+    left: 0em; }
+
+#elementBuilding div {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    background: #000; 
+}
